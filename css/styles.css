@@ -136,7 +136,20 @@ header {
 }
 
 .site-nav .is-active-page {
+  position: relative;
   color: var(--text-accent);
+}
+
+.site-nav .is-active-page::after {
+  content: '';
+
+  position: absolute;
+  bottom: 0;
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: var(--text-accent);
+  border-radius: 2px;
 }
 /* main */
 
