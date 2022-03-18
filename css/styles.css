@@ -50,6 +50,13 @@ body {
 .link {
   text-decoration: none;
   color: inherit;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link:hover,
+.link:focus {
+  color: var(--text-accent);
 }
 
 /* header */
@@ -128,11 +135,6 @@ header {
   margin-right: 50px;
 }
 
-.link:hover,
-.link:focus {
-  color: var(--text-accent);
-}
-
 .site-nav .is-active-page {
   color: var(--text-accent);
 }
@@ -187,6 +189,8 @@ header {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   cursor: pointer;
+
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sectin-order button:hover,
@@ -321,6 +325,9 @@ header {
   justify-content: center;
   align-items: center;
   color: #afb1b8;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icons a:hover,
@@ -353,6 +360,8 @@ header {
   color: #afb1b8;
   border: 1px solid currentColor;
   border-radius: 4px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-list .icon {
@@ -418,6 +427,8 @@ header {
 .contact-us a {
   color: var(--text-white);
   background: rgba(255, 255, 255, 0.1);
+
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-us a:hover,
@@ -452,6 +463,10 @@ header {
   background: var(--bg-accent);
   border-radius: 4px;
   border: none;
+
+  transition-property: color, background, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-selection .btn:hover,
@@ -478,6 +493,13 @@ header {
   margin-top: var(--card-set-gap);
 }
 
+.portfolio-projects a {
+  text-decoration: none;
+  color: inherit;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .portfolio-projects a:hover,
 .portfolio-projects a:focus {
   display: block;
@@ -489,11 +511,6 @@ header {
   padding: 20px 24px;
   border: 1px solid #eeeeee;
   border-top: none;
-}
-
-.portfolio-projects a {
-  text-decoration: none;
-  color: inherit;
 }
 
 .portfolio-projects h2 {
@@ -512,6 +529,56 @@ header {
   letter-spacing: 0.03em;
   color: var(--text-main);
   margin: 0;
+}
+
+/* modal */
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  min-width: 528px;
+  min-height: 581px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  background: #ffffff;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+.modal .close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
 }
 
 /* Visually hidden */

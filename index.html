@@ -61,7 +61,7 @@
       <section class="sectin-order">
         <div class="container">
           <h1>Эффективные решения для вашего бизнеса</h1>
-          <button type="button">Заказать услугу</button>
+          <button type="button" data-modal-open>Заказать услугу</button>
         </div>
       </section>
 
@@ -429,6 +429,15 @@
       </div>
     </footer>
     <!-- modal -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="close-btn" data-modal-close>
+          <svg width="11" height="11">
+            <use href="./images/sprite.svg#pics-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
 
     <script src="./js/modal.js"></script>
   </body>
